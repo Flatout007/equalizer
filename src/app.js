@@ -29,8 +29,8 @@ class AudioVisualizer {
         analyser.fftSize = 256;
 
 
-        this.canvas.style.width = '1000px';
-        this.canvas.style.height = '1000px';
+        // this.canvas.style.width = '500px';
+        // this.canvas.style.height = '1000px';
         let ctx = canvas.getContext("2d");
 
 
@@ -44,16 +44,16 @@ class AudioVisualizer {
             let bufferWidth = 0;
             analyser.getByteFrequencyData(audioBuffers);
             ctx.fillStyle = "#333"; // => controls canvas background color
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillRect(0, 0, canvas.width, canvas.height); // => controls height and width of canvas background
 
 
             for(let i = 0; i < binCount; i++) {
                 let r = audioBuffers[i] + (2.5 * (i / binCount));
-                let g = 200 
+                let g = 200;
                 let b = 90 + i;
 
                 ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                ctx.fillRect(bufferWidth, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]);
+                ctx.fillRect(bufferWidth - 250, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]);
                 bufferWidth += thicknessAmount + 1;
             }
         }

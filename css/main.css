@@ -1,8 +1,56 @@
+* {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+    }
+  
+
+
 .pattern-flex {
     display: flex;
     justify-content: center;
 }
 
-.pattern {
-    background-color: aqua;
+form input[type='file'] {
+   display: none;
+}
+
+
+
+/* ::-webkit-file-upload-button {
+  width: 200px;
+  height: 100px;
+   background: url('https://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Music-icon.png'); 
+  background: url('https://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Music-icon.png') no-repeat center;
+  background-size:contain;
+}  */
+
+form {
+   height: 100px;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+}
+
+.song-upload-button {
+    width: 100px;
+    height: 100px;
+    background: url('https://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Music-icon.png') no-repeat center;
+    background-size:contain;
+    cursor: pointer;
+    
+}
+
+.song-upload-button:active {
+  transform: translateY(4px);
+}
+
+#canvas {
+    width: 510px;
+    height: 200px;
+    background-color: grey;
 }
