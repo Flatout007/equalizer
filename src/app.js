@@ -13,8 +13,14 @@ class AudioVisualizer {
 
 
     initialize() {
-        const audioVisualizer = new AudioVisualizer();
-        audioVisualizer.handleFile();
+        this.handleFile();
+    }
+
+
+    handleConrols() {
+        document.querySelector("#volume-control").addEventListener("change", (e) => {
+            this.audio.volume = e.currentTarget.value / 100;
+        })
     }
 
 
@@ -26,7 +32,7 @@ class AudioVisualizer {
 
         src.connect(analyser);
         analyser.connect(context.destination);
-        analyser.fftSize = 256;
+        analyser.fftSize = 32;
 
 
         // this.canvas.style.width = '500px';
@@ -53,22 +59,24 @@ class AudioVisualizer {
                 let b = 90 + i;
 
                 ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                ctx.fillRect(bufferWidth - 250, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]);
+                ctx.fillRect(bufferWidth - 300, canvas.height- audioBuffers[i], thicknessAmount, audioBuffers[i]);
                 bufferWidth += thicknessAmount + 1;
             }
         }
 
 
-        render();
+        return render();
     }
 
 
     handleFile() {
         this.file.addEventListener('change', (e) => {
             this.audio.src = URL.createObjectURL(this.file.files[0]);
+            this.handleConrols();
             this.audio.load();
             this.audio.play();
             this.handleCanvas();
+            
         })
     }
 
