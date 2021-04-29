@@ -63,8 +63,8 @@ class AudioVisualizer {
         // })
 
         
-        canvas.width = window.innerWidth / 4;
-        canvas.height = window.innerHeight / 4;
+        canvas.width = window.innerWidth / 2;
+        canvas.height = window.innerHeight / 2;
         let ctx = canvas.getContext("2d");
 
 
