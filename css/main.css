@@ -6,20 +6,15 @@
         font-size: 100%;
         vertical-align: baseline;
         background: transparent;
-    }
+}
   
-
-
-.pattern-flex {
-  background-color: green;
-  display: flex;
-  justify-content: center;
+html {
+  background-color: ghostwhite;
 }
 
-
-
-.grid {
-  
+.pattern-flex {
+  display: flex;
+  justify-content: center;
 }
 
 form input[type='file'] {
@@ -67,26 +62,74 @@ form {
 .slider-container {
   display: flex;
   justify-content: center;
-  height: 200px;
+  height: 260px;
   width: 100%;
 }
 
-.slider {
+.slider-container .slider {
  transform: rotate(-90deg);
 }
 
+.volume-container {
+  display: flex;
+  justify-content: center;
+}
 
-input[type=range] {
+.volume-container input[type=range] {
+
+    width: 1000px;
+
+}
+
+.flex-list {
+ display: flex;
+ justify-content: center;
+ padding-bottom: 50px;
+}
+
+
+.flex-list li{
+  height: 50px;
+  width: 100px;
+  background-color: gold;
+  list-style: none;
+  border: 1px solid black
+}
+
+
+.slider-container input[type=range] {
   height: 10px;
   -webkit-appearance: none;
   margin: 10px 0;
-  width: 300px;
+  width: 180px;
   background-color: rgba(0,0,0,.5);
-  margin-top: 200px;
+  margin-top: 150px;
   outline: none;
 }
 
-input[type=range]::-webkit-slider-thumb {
+.album-grid {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-right: 12%;
+  margin-left: 12%;
+  margin-top: 120px;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.grid-flex {
+  display: flex;
+  justify-content: center;
+}
+
+.album-grid li {
+  width: 100px;
+  height: 100px;
+  background-color: gold;
+}
+
+.slider-container input[type=range]::-webkit-slider-thumb {
  -webkit-appearance: none;
  width: 30px;
  height: 30px;

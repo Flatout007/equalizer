@@ -18,9 +18,9 @@ class AudioVisualizer {
 
 
     handleConrols() {
-        // document.querySelector("#volume-control").addEventListener("change", (e) => {
-        //     this.audio.volume = e.currentTarget.value / 100;
-        // })
+        document.querySelector("#volume").addEventListener("change", (e) => {
+            this.audio.volume = e.currentTarget.value / 100;
+        })
     }
 
 
@@ -28,43 +28,77 @@ class AudioVisualizer {
         let context = new AudioContext();
         let src = context.createMediaElementSource(this.audio);
         let analyser = context.createAnalyser();
-        let gainParam = -39.0;
-        let bandType = [360, 3600];
+
+
+        let gainParam = -40.0;
+        let bandTypes = [360, 3600];
+        let gainOutput = context.createGain();
+
+
+        // high 
         let highEq = context.createBiquadFilter();
-
         highEq.type = "lowshelf";
-        highEq.frequency.value = bandType[0];
+        highEq.frequency.value = bandTypes[0];
         highEq.gain.value = gainParam;
-
         let highBand = context.createGain();
         highBand.gain.value = -1.0;
         src.connect(highEq);       
         highEq.connect(highBand);
-        
         let highGain = context.createGain();
-
         highEq.connect(highGain);
-        let gainOutput = context.createGain();
-        
         highGain.connect(gainOutput);
+
+
+        //low
+        let lowEq = context.createBiquadFilter();
+        lowEq.type = 'highshelf';
+        lowEq.frequency.value = bandTypes[1];
+        lowEq.gain.value = gainParam;
+        let lowBand = context.createGain();
+        lowBand.gain.value = -1.0;
+        src.connect(lowEq);
+        lowEq.connect(lowBand);
+        let lowGain = context.createGain();
+        lowEq.connect(lowGain);
+        lowGain.connect(gainOutput);
+
+
+        //mid
+        let midEq = context.createGain();
+        src.connect(midEq);
+        highEq.connect(midEq);
+        lowEq.connect(midEq);
+        let midGain = context.createGain();
+        midEq.connect(midGain);
+        midGain.connect(gainOutput);
+
+
+        // gain aggregate
         gainOutput.connect(context.destination);
 
 
-        
         src.connect(analyser);
         analyser.connect(context.destination); 
         analyser.fftSize = 256;
 
-        
-        
 
-        // document.querySelector("#volume-control").addEventListener("change", (e) => {
-        //     highGain.gain.value = e.currentTarget.value / 100;
-        // })
+        document.querySelector("#high").addEventListener("change", (e) => {
+            highGain.gain.value = parseFloat(e.currentTarget.value / 100.0);
+        })
 
-        
-        canvas.width = window.innerWidth / 2;
-        canvas.height = window.innerHeight / 2;
+
+        document.querySelector("#low").addEventListener("change", (e) => {
+            lowGain.gain.value = parseFloat(e.currentTarget.value / 100.0);
+        })
+
+
+        document.querySelector("#mid").addEventListener("change", (e) => {
+            midGain.gain.value = parseFloat(e.currentTarget.value / 100.0);
+        })
+
+
+        canvas.width = window.innerWidth / 4;
+        canvas.height = window.innerHeight / 4;
         let ctx = canvas.getContext("2d");
 
 
@@ -86,10 +120,9 @@ class AudioVisualizer {
                 let g = 200;
                 let b = 90 + i;
          
-                let myheight = audioBuffers[i]
-
+                
                 ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-                ctx.fillRect(bufferWidth, canvas.height - myheight, thicknessAmount, myheight);
+                ctx.fillRect(bufferWidth - 100, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]);
                 bufferWidth += thicknessAmount + 1;
             }
         }
