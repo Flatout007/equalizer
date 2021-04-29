@@ -9,18 +9,20 @@
     <script src="./src/app.js" defer></script>
 </head>
 <body>
-    <form>
-        <label class="song-upload-button" for="audio-file">
-           <input type="file" id="audio-file" class="audio-file" accept="audio/*"/>
-        </label>
-        <input type="range" id="volume-control">
-    </form>
-    <div class="pattern-flex">
-        <canvas id="canvas"></canvas>        
-    </div>
-    <audio class="audio" controls></audio>
-    <button>refresh</button>
-
-    
+        <form>
+            <label class="song-upload-button" for="audio-file">
+                <input type="file" id="audio-file" class="audio-file" accept="audio/*"/>
+            </label>
+        </form>
+        <div class="pattern-flex">
+            <canvas id="canvas"></canvas>
+        </div>
+        </div>
+        <audio class="audio" ></audio>
+        <div class="slider-container">
+            <input type="range" class="slider">
+            <input type="range" class="slider">
+            <input type="range" class="slider">
+        </div>
 </body>
 </html>
