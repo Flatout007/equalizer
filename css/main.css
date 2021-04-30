@@ -141,7 +141,6 @@ form {
 .album-grid li {
   width: 100px;
   height: 100px;
-  background-color: gold;
 }
 
 .slider-container input[type=range]::-webkit-slider-thumb {
