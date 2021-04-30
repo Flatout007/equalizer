@@ -91,6 +91,7 @@ form {
 .flex-list li{
   height: 50px;
   width: 100px;
+  background-color: green;
   list-style: none;
   border: 1px solid black;
   
@@ -140,6 +141,7 @@ form {
 .album-grid li {
   width: 100px;
   height: 100px;
+  background-color: green;
 }
 
 .slider-container input[type=range]::-webkit-slider-thumb {
