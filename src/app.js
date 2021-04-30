@@ -821,7 +821,7 @@ class AudioVisualizer {
 
                     
                     ctx.fillStyle = `rgb(${r},${g},${b})`;
-                    ctx.fillRect(bufferWidth - 100, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]); // => controls bin pattern
+                    ctx.fillRect(bufferWidth, canvas.height - audioBuffers[i], thicknessAmount, audioBuffers[i]); // => controls bin pattern
                     bufferWidth += thicknessAmount + 1;
                 }
             }
