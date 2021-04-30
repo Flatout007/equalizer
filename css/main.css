@@ -97,7 +97,7 @@ form {
   
 }
 
-.flex-list li:nth-child(2) {
+.flex-list li:nth-child(1) {
   background: url('https://www.flaticon.com/svg/vstatic/svg/27/27185.svg?token=exp=1619762194~hmac=5b04f69b5385af455f05e22964ae52c8') no-repeat center;
   background-size:contain;
   /* background-color: white; */
@@ -107,7 +107,7 @@ form {
     margin: 0px 0px 0px 0px;
 }
 
-.flex-list li:nth-child(2):active {
+.flex-list li:nth-child(1):active {
   box-shadow: 0 0 0 white;
   margin: 1px 1px 1px 1px;
 }

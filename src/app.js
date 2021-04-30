@@ -12,6 +12,7 @@ class AudioVisualizer {
         this.eye = document.querySelector('.audio-2');
 
         this.handleVideo = this.handleVideo.bind(this);
+       
     }
 
 
@@ -19,6 +20,7 @@ class AudioVisualizer {
         this.handleFile();
         this.handleEyeOfTheTiger();
         this.handleControls();
+        
     }
 
 
@@ -27,8 +29,25 @@ class AudioVisualizer {
             this.audio.volume = e.currentTarget.value / 100;
             this.eye.volume = e.currentTarget.value / 100;
         })
+
+        let tiger = document.querySelector('.flex-list li:nth-child(1)');
+
+        tiger.addEventListener('click', e => {
+            if (!this.audio.paused && !this.audio.ended) {
+                this.audio.pause();
+                this.eye.pause();
+                document.querySelector('.vid').style.display = 'none';
+                
+            }
+            else if (this.audio.paused) {
+                this.audio.play(); 
+                this.eye.play();
+                document.querySelector('.vid').style.display = 'block';
+            }
+        })
     }
 
+    
 
     handleEyeOfTheTiger() {
         document.querySelector('.album-grid:nth-child(1)').addEventListener('click', e => {
@@ -262,8 +281,14 @@ class AudioVisualizer {
             this.audio.src = URL.createObjectURL(this.file.files[0]);
             this.audio.load();
             this.audio.play();
-            this.handleUserAudioFile();
-            this.handleVideo();  
+            this.handleUserAudioFile();  
+            // this.handleVideo();
+            
+            document.querySelector('.vid').style.display = 'block';
+            
+            
+            
+            
         })
     }
 
