@@ -133,6 +133,23 @@ form {
 }
 
 
+.album-grid li:nth-child(6) {
+  background: url('https://is3-ssl.mzstatic.com/image/thumb/Music128/v4/52/45/c6/5245c6ba-dd28-3a83-d019-51d405d31fde/00886443203884.rgb.jpg/600x600bb-60.jpg') no-repeat center;
+  background-size: cover;
+}
+
+.album-grid li:nth-child(5) {
+    background: url('https://images.squarespace-cdn.com/content/v1/5795f260414fb5c7c374b62a/1579680784197-78IJ6EPJSGVS3UGVASDB/ke17ZwdGBToddI8pDm48kCOQQNXA6dDqlVAToNRdJCQUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYy7Mythp_T-mtop-vrsUOmeInPi9iDjx9w8K4ZfjXt2dpS1TaeIbdr1sPytWvsPBYfIZchPzPrU6-tZB6EaigKpCjLISwBs8eEdxAxTptZAUg/TheWeeknd_BlindingLights.png?format=1500w') no-repeat center;
+  background-size: cover;
+}
+
+
+.album-grid li:nth-child(4) {
+    background: url('https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/04/c7/14/04c714b8-e897-11b3-238f-e666d524e968/888888046775.jpg/600x600bb-60.jpg') no-repeat center;
+  background-size:contain;
+}
+
+
 .album-grid li:nth-child(3) {
     background: url('https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/b3/59/d0/b359d085-aa84-aae8-d03c-5305d0bb0111/16UMGIM34076.rgb.jpg/600x600bb-60.jpg') no-repeat center;
   background-size:contain;
