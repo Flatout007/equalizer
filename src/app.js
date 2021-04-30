@@ -40,6 +40,21 @@ class AudioVisualizer {
         let playButton = document.querySelector('.flex-list li:nth-child(1)');
         let travisBarker = document.querySelector('.drums');
 
+        playButton.addEventListener('click', e => {
+            if (!this.audio.paused && this.audio.currentTime > 0 && !this.audio.ended) {
+                this.audio.pause();
+
+
+                document.querySelector('.vid').style.display = 'none';
+            }
+            else if (this.audio.paused && this.audio.currentTime > 0) {
+
+                this.audio.play();
+
+                document.querySelector('.vid').style.display = 'block';
+            }
+        })
+
 
         playButton.addEventListener('click', e => {   
             if (!this.eye.paused && this.eye.currentTime > 0 && !this.eye.ended) { 
