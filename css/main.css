@@ -52,9 +52,8 @@ form {
 }
 
 #canvas {
-    
   width: 1800px;
-  height: 300px;
+  height: 250px;
   background-color: black;
 }
 
@@ -133,15 +132,46 @@ form {
   margin-top: 20px;
 }
 
+
+.album-grid li:nth-child(3) {
+    background: url('https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/b3/59/d0/b359d085-aa84-aae8-d03c-5305d0bb0111/16UMGIM34076.rgb.jpg/600x600bb-60.jpg') no-repeat center;
+  background-size:contain;
+}
+
+.album-grid li:nth-child(2) {
+    background: url('https://is4-ssl.mzstatic.com/image/thumb/Music124/v4/46/bc/48/46bc48d3-8bff-8552-a5df-cc1bb18a9e31/00602527670195.rgb.jpg/600x600bb-60.jpg') no-repeat center;
+  background-size:contain;
+}
+
+.album-grid li:nth-child(1) {
+  background: url('https://i.pinimg.com/originals/ce/de/a5/cedea5f757301128e39ebf13a36d3596.jpg') no-repeat center;
+  background-size:contain;
+}
+
 .grid-flex {
   display: flex;
   justify-content: center;
 }
 
 .album-grid li {
-  width: 100px;
+  /* width: 100px;
+  height: 100px; */
+  cursor: pointer;
+  /* margin: 18px; */
+  text-decoration: none;
+  border-style: rgb(87, 86, 86) solid;
+  border-radius: 12px;
+  border-width: 0.5px;
+  /* background-color: #eee; */
+  opacity: 1;
+  text-align: center;
   height: 100px;
+  width: 100px;
   background-color: green;
+}
+
+.album-grid li:hover {
+   transform: scale(1.03);
 }
 
 .slider-container input[type=range]::-webkit-slider-thumb {
