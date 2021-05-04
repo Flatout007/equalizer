@@ -109,7 +109,7 @@ class AudioVisualizer {
                 
                 document.querySelector('.vid').style.display = 'block';
             }
-            console.log('hello')
+        
         })
 
         playButton.addEventListener('click', e => {
