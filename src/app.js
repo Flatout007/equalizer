@@ -15,10 +15,6 @@ class AudioVisualizer {
         this.down = document.querySelector('.down');
         this.blinding = document.querySelector('.blinding');
         this.bed = document.querySelector('.bed');
-        
-
-        this.handleVideo = this.handleVideo.bind(this);
-       
     }
 
 
