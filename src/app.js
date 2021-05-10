@@ -948,10 +948,7 @@ class AudioVisualizer {
             // this.handleVideo();
             
             document.querySelector('.vid').style.display = 'block';
-            
-            
-            
-            
+
         })
     }
 
