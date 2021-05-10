@@ -938,12 +938,7 @@ class AudioVisualizer {
         return render();
     }
 
-
-    handleVideo() {
-        document.querySelector('.vid').style.display = 'block';
-    }
-
-
+    
     handleFile() {
         this.file.addEventListener('change', (e) => {
             this.audio.src = URL.createObjectURL(this.file.files[0]);
