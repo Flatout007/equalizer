@@ -76,8 +76,6 @@ class AudioVisualizer {
             }
         })
 
-
-
         playButton.addEventListener('click', e => {   
             if (!this.eye.paused && this.eye.currentTime > 0 && !this.eye.ended) { 
                 this.eye.pause();
@@ -945,7 +943,6 @@ class AudioVisualizer {
             this.audio.load();
             this.audio.play();
             this.handleUserAudioFile();  
-            // this.handleVideo();
             
             document.querySelector('.vid').style.display = 'block';
 
