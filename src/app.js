@@ -948,8 +948,6 @@ class AudioVisualizer {
 
         })
     }
-
-
 }
 
 
