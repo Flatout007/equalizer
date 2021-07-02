@@ -231,3 +231,14 @@ button {
     margin: 4px 10px 4px 10px;
 }
 
+
+.arrow {
+  position: relative;
+  background: url('https://assets.dryicons.com/uploads/icon/svg/3020/right_arrow.svg') center / cover no-repeat;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  list-style: none;
+  top: 7px;
+  right: 25px;
+}
