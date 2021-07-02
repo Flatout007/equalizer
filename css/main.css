@@ -44,12 +44,18 @@ form {
     background: url('https://icons.iconarchive.com/icons/dtafalonso/yosemite-flat/256/Music-icon.png') no-repeat center;
     background-size:contain;
     cursor: pointer;
+    position: absolute;
+
+    left: 194px;
+    top: 0px;
+
     
 }
 
 .song-upload-button:active {
-  transform: translateY(4px);
+  transform: translateY(5px);
 }
+
 
 #canvas {
   width: 1800px;
@@ -235,10 +241,117 @@ button {
 .arrow {
   position: relative;
   background: url('https://assets.dryicons.com/uploads/icon/svg/3020/right_arrow.svg') center / cover no-repeat;
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 100%;
   list-style: none;
-  top: 7px;
-  right: 25px;
+  left: 72px;
+  top: 6px;
+
 }
+
+.info {
+  position: absolute;
+  background: url('https://img.pngeasy.com/lrtk/down/png/0912/tuyatubiao256/info.png') center / cover no-repeat;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  list-style: none;
+ 
+    top: 36px;
+    left: 401px;
+
+}
+
+.instructions {
+  display: none;
+  z-index: 1000;
+  height: max-content;
+  width: 300px;
+  position: absolute;
+  left: 425px;
+  top: 50px;
+  font-size: 12.3px;
+  font-weight: bold;
+  line-height: 16px;
+  background-color: #333;
+  color: ghostwhite;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+
+}
+
+.instructions ol li {
+  padding-right: 20px;
+  padding-bottom: 10px;
+  /* padding-left: 50px; */
+  
+}
+
+.instructions ol li:nth-child(1) {
+  padding-top: 5px;
+}
+
+.instructions ol {
+ padding-left: 30px;
+  
+}
+
+.profile-links {
+  position: relative;
+
+    
+    
+    left: 365px;
+    bottom: 79px;
+    height: 25px;
+    width: 100px;
+
+
+
+}
+
+.profile-links a {
+    background-color: #6E943B;
+    height: 25px;
+    width: 25px;
+    list-style: none;
+    position: absolute;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.profile-links a:hover {
+  transform: scale(1.1);
+  transition: all .5s;
+}
+
+.profile-links a:nth-child(1) {
+  background: url('https://img.icons8.com/ios/452/linkedin.png') 100% center / cover no-repeat;
+  border-radius: 100%;
+ 
+  border: 1px solid #3b7788be;
+}
+
+
+.profile-links a:nth-child(2) {
+   background: url('https://img.icons8.com/ios/452/github.png') center / cover no-repeat;
+   border-radius: 100%;
+
+    left: 37px;
+
+   
+
+  }
+
+
+.profile-links a:nth-child(3) {
+  background: url('https://img.icons8.com/ios/452/angelist.png') 100% center / cover no-repeat;
+  border-radius: 100%;
+  
+
+    left: 67px;
+
+ }
