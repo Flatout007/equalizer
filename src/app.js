@@ -8,19 +8,19 @@ class AudioVisualizer {
     constructor() {
         this.file = document.querySelector(".audio-file");
         this.audio = document.querySelector(".audio");
-        this.canvas = document.getElementById('canvas');
-        this.eye = document.querySelector('.eye');
-        this.travis = document.querySelector('.travis');
-        this.theKill = document.querySelector('.mars');
-        this.down = document.querySelector('.down');
-        this.blinding = document.querySelector('.blinding');
-        this.bed = document.querySelector('.bed');
+        // this.canvas = document.getElementById('canvas');
+        this.animal = './animal.mp3';
+        this.travis = './travis.mp3';
+        this.theKill = './theKill.mp3';
+        this.down = './down.mp3';
+        this.bed = './bed.mp3';
+        this.blinding = './blinding.mp3';
     }
 
 
     initialize() {
         this.handleFile();
-        this.handleEyeOfTheTiger();
+        this.handleAnimal();
         this.handleTravisBarker();
         this.handleTheKill();
         this.handleSystemOfADown();
@@ -32,14 +32,9 @@ class AudioVisualizer {
 
 
     handleControls() {
+        this.audio.volume = 0.59;
         document.querySelector("#volume").addEventListener("change", (e) => {
             this.audio.volume = e.currentTarget.value / 100;
-            this.eye.volume = e.currentTarget.value / 100;
-            this.travis.volume = e.currentTarget.value / 100;
-            this.theKill.volume = e.currentTarget.value / 100;
-            this.down.volume = e.currentTarget.value / 100;
-            this.blinding.volume = e.currentTarget.value / 100;
-            this.bed.volume = e.currentTarget.value / 100;
         })
 
 
@@ -60,105 +55,16 @@ class AudioVisualizer {
                 document.querySelector('.vid').style.display = 'block';
             }
         })
-
-        playButton.addEventListener('click', e => {
-            if (!this.blinding.paused && this.blinding.currentTime > 0 && !this.blinding.ended) {
-                this.blinding.pause();
-
-
-                document.querySelector('.vid').style.display = 'none';
-            }
-            else if (this.blinding.paused && this.blinding.currentTime > 0) {
-
-                this.blinding.play();
-
-                document.querySelector('.vid').style.display = 'block';
-            }
-        })
-
-        playButton.addEventListener('click', e => {   
-            if (!this.eye.paused && this.eye.currentTime > 0 && !this.eye.ended) { 
-                this.eye.pause();
-               
-                
-                document.querySelector('.vid').style.display = 'none';
-            }
-            else if(this.eye.paused && this.eye.currentTime > 0 ) {
-               
-                this.eye.play();
-                
-                document.querySelector('.vid').style.display = 'block';
-            }  
-        })
-
-
-        playButton.addEventListener('click', e => {
-            if (!this.travis.paused && this.travis.currentTime > 0 && !this.travis.ended) {
-                this.travis.pause();
-                document.querySelector('.vid').style.display = 'none';
-
-            }
-            else if (this.travis.paused && this.travis.currentTime > 0) {
-                this.travis.play();
-                
-                document.querySelector('.vid').style.display = 'block';
-            }
-        
-        })
-
-        playButton.addEventListener('click', e => {
-            if (!this.bed.paused && this.bed.currentTime > 0 && !this.bed.ended) {
-                this.bed.pause();
-                document.querySelector('.vid').style.display = 'none';
-
-            }
-            else if (this.bed.paused && this.bed.currentTime > 0) {
-                this.bed.play();
-
-                document.querySelector('.vid').style.display = 'block';
-            }
-            console.log('hello')
-        })
-
-
-        playButton.addEventListener('click', e => {
-            if (!this.theKill.paused && this.theKill.currentTime > 0 && !this.theKill.ended) {
-                this.theKill.pause();
-                document.querySelector('.vid').style.display = 'none';
-
-            }
-            else if (this.theKill.paused && this.theKill.currentTime > 0) {
-                this.theKill.play();
-
-                document.querySelector('.vid').style.display = 'block';
-            }
-            console.log('hello')
-        })
-
-        playButton.addEventListener('click', e => {
-            if (!this.down.paused && this.down.currentTime > 0 && !this.down.ended) {
-                this.down.pause();
-
-
-                document.querySelector('.vid').style.display = 'none';
-            }
-            else if (this.down.paused && this.down.currentTime > 0) {
-
-                this.down.play();
-
-                document.querySelector('.vid').style.display = 'block';
-            }
-        })
-
     }
 
 
     handleWeeknd() {
         document.querySelector('.album-grid li:nth-child(5)').addEventListener('click', e => {
-            this.blinding.load();
-            this.blinding.play();
+            this.audio.src = this.blinding;
+            this.audio.load();
+            this.audio.play();
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.blinding);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;
@@ -267,10 +173,14 @@ class AudioVisualizer {
     
     handleSystemOfADown() {
         document.querySelector('.album-grid li:nth-child(4)').addEventListener('click', e => {
-            this.down.load();
-            this.down.play();
+            // this.down.load();
+            // this.down.play();
+            this.audio.src = this.down;
+            this.audio.load();
+            this.audio.play();
+
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.down);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;
@@ -379,10 +289,13 @@ class AudioVisualizer {
 
     handleTheKill() {
         document.querySelector('.album-grid li:nth-child(3)').addEventListener('click', e => {
-            this.theKill.load();
-            this.theKill.play();
+            // this.theKill.load();
+            // this.theKill.play();
+            this.audio.src = this.theKill;
+            this.audio.load();
+            this.audio.play();
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.theKill);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;
@@ -492,10 +405,11 @@ class AudioVisualizer {
 
     handleRightSideOfTheBed() {
         document.querySelector('.album-grid li:nth-child(6)').addEventListener('click', e => {
-            this.bed.load();
-            this.bed.play();
+            this.audio.src = this.bed;
+            this.audio.load();
+            this.audio.play();
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.bed);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;
@@ -604,10 +518,11 @@ class AudioVisualizer {
 
     handleTravisBarker() {
         document.querySelector('.album-grid li:nth-child(2)').addEventListener('click', e => {
-            this.travis.load();
-            this.travis.play();
+            this.audio.src = this.travis;
+            this.audio.load();
+            this.audio.play();
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.travis);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;
@@ -715,12 +630,13 @@ class AudioVisualizer {
 
     
 
-    handleEyeOfTheTiger() {
+    handleAnimal() {
         document.querySelector('.album-grid li:nth-child(1)').addEventListener('click', e => {
-            this.eye.load();
-            this.eye.play();
+            this.audio.src = this.animal;
+            this.audio.load();
+            this.audio.play();
             let context = new AudioContext();
-            let src = context.createMediaElementSource(this.eye);
+            let src = context.createMediaElementSource(this.audio);
             let analyser = context.createAnalyser();
 
             let gainParam = -40.0;

@@ -1,94 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>equalizer</title>
-    <link rel="stylesheet" href="./css/main.css">
-    <script src="./src/app.js" defer></script>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>equalizer</title>
+            <link rel="stylesheet" href="./css/main.css">
+            <script src="./src/app.js" defer></script>
+            <link rel="icon" type="image/png" href="https://cdn4.iconfinder.com/data/icons/essentials-bigdark/100/first_glyph_Set_random-01-128.png" />
 </head>
 <body>
 
-        <form>
-           <div style="position: relative;  height: 100px; width: 500px;">
-                        <label style="position: absolute; left: 55px; top: 3px; font-weight: 700; height: 16px;">Upload a Song</label>
-                        <li class="arrow"></li>
-                        <li class="info"></li>
-                        <div class="profile-links">
-                            <a href="https://www.linkedin.com/in/reginald-dunlap-591612202/"></a>
-                            <a href="https://github.com/Flatout007"></a>
-                            <a href="https://angel.co/u/reggie-dunn"></a>
+            <form>
+                        <div style="position: relative;  height: 100px; width: 500px;">
+                                    <label style="position: absolute; left: 55px; top: 3px; font-weight: 700; height: 16px;">Upload a Song</label>
+                                    <li class="arrow"></li>
+                                    <li class="info"></li>
+                                    <div class="profile-links">
+                                                <a target="_blank" href="https://www.linkedin.com/in/reginald-dunlap-591612202/"></a>
+                                                <a target="_blank" href="https://github.com/Flatout007"></a>
+                                                <a target="_blank" href="https://angel.co/u/reggie-dunn"></a>
+                                    </div>
+                                    <div class="instructions">
+                                                <ol>
+                                                            <li>Click on the music icon to upload a personal song, this will start the app and display the songs context via analyzer.</li>
+                                                            <li>Click on any album cover to start playing the music and view their context through the analyzer.</li>
+                                                            <li>The horizontal slider above the album covers control the volume, while the 3 vertical sliders control the high, low, and mid gains respectively.</li>
+                                                </ol>
+                                    </div>
+                                    <label class="song-upload-button" for="audio-file">
+                                                <input type="file" id="audio-file" class="audio-file" accept="audio/*"/>
+                                    </label>
                         </div>
-                        <div class="instructions">
-                           <ol>
-                               <li>Click on the music icon to upload a personal song, this will start the app and display the songs context via analyzer.</li>
-                               <li>Click on any album cover to start playing the music and view their context through the analyzer.</li>
-                               <li>The horizontal slider above the album covers control the volume, while the 3 vertical sliders control the high, low, and mid gains respectively.</li>
-                           </ol>
-
-
-
-                        </div>
-                        <label class="song-upload-button" for="audio-file">
-                        <input type="file" id="audio-file" class="audio-file" accept="audio/*"/>
-                        </label>
-                    </div>
-            
-        </form>
-        <div class="pattern-flex">
+            </form>
+            <div class="pattern-flex">
                         <canvas id="canvas"></canvas>
-        </div>
-        <div>
-             <ul class="flex-list">
-                        <li></li>
-             </ul>
-        </div>
-        <audio class="audio"></audio>
-        <audio class="eye" src='./animal.mp3'></audio>
-        <audio class="travis" src='./travis.mp3'></audio>
-        <audio class="mars" src='./theKill.mp3'></audio>
-        <audio class="blinding" src='./blinding.mp3'></audio>
-        <audio class="down" src='./down.mp3'></audio>
-        <audio class="bed" src='./bed.mp3'></audio>
-        <div class="volume-container"><input type="range" class="slider" id='volume'></div>
-        <div class="slider-container">
-                        <label style="position: relative; left: 518px; top: 34px; font-weight: 700; height: 16px;">Hi</label>
-                        <input type="range" class="slider" id='high'>
-                        <label style="position: relative; left: 105px; top: 34px; font-weight: 700; height: 16px;">Mid</label>
-                        <input type="range" class="slider" id='mid'>
-                        <label style="position: relative; left: -314px; top: 34px; font-weight: 700; height: 16px;">Low</label>
-                        <input type="range" class="slider" id='low'>
-        </div>
-        <div class="grid-flex">
-                        <ul class='album-grid'>
-                                <li></li>
-                                <li class='drums'></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
+            </div>
+            <div>
+                        <ul class="flex-list">
+                                    <li></li>
                         </ul>
-        </div>
-                    <video muted autoplay loop class='vid' src="https://player.vimeo.com/external/466569023.hd.mp4?s=bebf4d88f833a21c053d16c0568f3305d63f1f49&profile_id=175&oauth2_token_id=57447761">
-        </video>
-        <script>
-            let instructions = document.querySelector('.instructions');
-            let info = document.querySelector('.info');
+            </div>
+            <audio class="audio" src=''></audio>
+            <div class="volume-container"><input type="range" class="slider" id='volume'></div>
+            <div class="slider-container">
+                            <label style="position: relative; left: 518px; top: 34px; font-weight: 700; height: 16px;">Hi</label>
+                            <input type="range" class="slider" id='high'>
+                            <label style="position: relative; left: 105px; top: 34px; font-weight: 700; height: 16px;">Mid</label>
+                            <input type="range" class="slider" id='mid'>
+                            <label style="position: relative; left: -314px; top: 34px; font-weight: 700; height: 16px;">Low</label>
+                            <input type="range" class="slider" id='low'>
+            </div>
+            <div class="grid-flex">
+                            <ul class='album-grid'>
+                                        <li></li>
+                                        <li class='drums'></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                                        <li></li>
+                            </ul>
+            </div>
+            <video muted autoplay loop class='vid' src="https://player.vimeo.com/external/466569023.hd.mp4?s=bebf4d88f833a21c053d16c0568f3305d63f1f49&profile_id=175&oauth2_token_id=57447761"></video>
+            <script>
+                let instructions = document.querySelector('.instructions');
+                let info = document.querySelector('.info');
+                
+
+                const showInstructions = () => {
+                    instructions.style.display = 'block';
+                };
+
+
+                const hideInstructions = () => {
+                    instructions.style.display = 'none';
+                };
             
 
-            const showInstructions = () => {
-                instructions.style.display = 'block';
-            };
-
-
-            const hideInstructions = () => {
-                instructions.style.display = 'none';
-            };
-           
-
-            info.addEventListener('mouseleave', hideInstructions);
-            info.addEventListener('mouseenter', showInstructions);
-        </script>
+                info.addEventListener('mouseleave', hideInstructions);
+                info.addEventListener('mouseenter', showInstructions);
+            </script>
 </body>
 </html>
